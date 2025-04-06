@@ -1,0 +1,105 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f7f4fb, #e6d4f7);
+    color: #4b0082;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 10px 10px;
+    color: #6a0dad;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.controls {
+    width: 40%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(106, 13, 173, 0.2);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #9b59b6;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8e44ad;
+}
+
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+#graph {
+    width: 100%;
+    height: 500px;
+    border: 2px solid #dcd0ff;
+    border-radius: 10px;
+    background-color: white;
+    animation: fadeIn 1s ease;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(106, 13, 173, 0.7); }
+    70%  { transform: scale(1.05); box-shadow: 0 0 15px 5px rgba(106, 13, 173, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(106, 13, 173, 0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#result.animated {
+    animation: pulse 0.6s ease-in-out;
+}
+
+.graph-container {
+    width: 60%;
+    animation: fadeIn 1s ease;
+}
