@@ -1,0 +1,6 @@
+gunicorn
+graphviz
+numpy
+scikit-learn
+flask
+nbformat
