@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafo con Dijkstra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Grafo Dinámico con Dijkstra</h1>
+
+    <div class="main-container">
+        <div class="controls">
+            <section>
+                <h2>Agregar Nodo</h2>
+                <input type="text" id="node-name" placeholder="Nombre del nodo">
+                <button onclick="addNode()">Agregar Nodo</button>
+            </section>
+
+            <section>
+                <h2>Agregar Arista</h2>
+                <input type="text" id="edge-src" placeholder="Nodo origen">
+                <input type="text" id="edge-dst" placeholder="Nodo destino">
+                <input type="number" id="edge-weight" placeholder="Peso">
+                <button onclick="addEdge()">Agregar Arista</button>
+            </section>
+
+            <section>
+                <h2>Algoritmo de Dijkstra</h2>
+                <input type="text" id="start-node" placeholder="Inicio">
+                <input type="text" id="end-node" placeholder="Destino">
+                <button onclick="runDijkstra()">Calcular</button>
+                <div id="result"></div>
+            </section>
+
+            <section>
+                <form action="/eliminar_grafo" method="POST">
+                    <button>Eliminar Grafo</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="graph-container">
+            <h2>Visualización del Grafo</h2>
+            <div id="graph"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
